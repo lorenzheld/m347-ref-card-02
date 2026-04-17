@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write # Wichtig, damit GitHub das Image in die GHCR hochladen darf!
+      packages: write
 
     steps:
       - name: Checkout code
@@ -34,5 +34,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/
-            ghcr.io/${{ github.repository_owner }}/
+            ${{ secrets.DOCKERHUB_USERNAME }}/ref-card-02:latest
+            ghcr.io/${{ github.repository_owner }}/ref-card-02:latest
